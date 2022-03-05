@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2022-03-04
+  lat: 1.5
+  lon: 1.5
+  city: MyString
+  state: MyString
+  temperatures: 1.5
+
+two:
+  date: 2022-03-04
+  lat: 1.5
+  lon: 1.5
+  city: MyString
+  state: MyString
+  temperatures: 1.5
