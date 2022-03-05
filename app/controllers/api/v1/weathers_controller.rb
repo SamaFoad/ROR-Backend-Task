@@ -2,12 +2,16 @@ class Api::V1::WeathersController < ApplicationController
     protect_from_forgery with: :null_session
 
     def create
+        unless params[:date] and params[:lat] and params[:lon] and params[:city] and params[:state] and params[:temperatures]
+            render json: { success: false, message: "Missing Params" }, status: 400
+            return
+        end
         @weather = Weather.new(weather_params)
         if @weather.save
           res = { weather: @weather, message: "created" }
           render json: res, status: 201
         else
-          res = { message: "Invalid parameters", errors: @weather.errors }
+          res = { message: "Invalid parameters" }
           render json: res, status: 400
         end
     end
